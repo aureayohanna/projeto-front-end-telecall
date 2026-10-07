@@ -20,9 +20,7 @@ O objetivo principal foi modernizar a presença digital da operadora, focando em
 - **AOS (Animate On Scroll)**: Implementação de animações para melhor experiência de navegação.
 
 ## 📸 Capturas de Tela
-*(Dica: Adicione prints do seu projeto aqui para valorizar seu portfólio)*
-\![\text{Home Page}](img/home-screenshot.png)
-\![\text{Área do Cliente}](img/cliente-screenshot.png)
+
 
 ---
-Desenvolvido por [Seu Nome] 🚀
+Desenvolvido por Aurea Yohanna
