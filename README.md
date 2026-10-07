@@ -19,8 +19,10 @@ O objetivo principal foi modernizar a presença digital da operadora, focando em
 - **Bootstrap**: Framework para grid responsivo e componentes de UI.
 - **AOS (Animate On Scroll)**: Implementação de animações para melhor experiência de navegação.
 
-## 📸 Capturas de Tela
-
+## 📸 Demonstração do Projeto
+\![\text{Home Page}](img/home.gif)
+\![\text{Login e Cadastro}](img/login.gif)
+\![\text{Área do Cliente}](img/area-cliente.gif)
 
 ---
-Desenvolvido por Aurea Yohanna
+Desenvolvido por [Seu Nome] 🚀
