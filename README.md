@@ -25,4 +25,4 @@ O objetivo principal foi modernizar a presença digital da operadora, focando em
 \![\text{Área do Cliente}](img/area-cliente.gif)
 
 ---
-Desenvolvido por Aurea Yohanna.
+Desenvolvido por [Aurea Yohanna](https://github.com/aureayohanna)
