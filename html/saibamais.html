@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Telecall</title>
+
+  <!--favicon-->
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="../favicon_io/site.webmanifest">
+
+  <!--google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!--referencias ao css-->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="../vendor/aos/aos.css" rel="stylesheet">
+  <link href="../css/main.css" rel="stylesheet">
+</head>
+
+<body class="text-center {{ darkMode ? 'dark' : '' }}">
+  <div id="content">
+    <!-- header -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="../img/logo telecall.png">
+        </a>
+
+        <i class="mobile-nav-toggle mobile-nav-show fa-solid fa-bars" style="color: #0E4C73;"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none fa-solid fa-xmark"></i>
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cpaas.html">Modavo</a></li>
+                <li><a href="2fa.html">2FA</a></li>
+                <li><a href="numeromascara.html">Número Máscara</a></li>
+                <li><a href="googleverifiedcalls.html">Google Verified Calls</a></li>
+                <li><a href="smsprogramavel.html">SMS Programável</a></li>
+                <li><a class="area-do-cliente" href="areadocliente.html">Área do Cliente</a></li> 
+                <!--botao flutuante aumentar e diminuir fonte-->
+                <div class="card" id="card">
+                  <div class="card-body">
+                    <h5 class="card-title">fonte</h5>
+                    <button type="button" class="btn btn-outline-primary" id="btnExibir"><i class="fa-solid fa-font fa-xs" style="color: white;"></i></button>
+                    <div class="botao-flutuante" id="botoes">
+                      <div class="btns btn-group-vertical" role="group" aria-label="Vertical button group">
+                        <button type="button" class="btn btn-primary" id="btnAumentar">aumentar</button>
+                        <button type="button" class="btn btn-primary" id="btnDiminuir">diminuir</button>
+                      </div> 
+                    </div>
+                  </div>
+                </div>   
+            </ul>
+        </nav>
+      </div>
+      <!--modo claro e-->
+      <div>
+        <input type="checkbox" class="mode" id="mode"/>
+        <label class="label" for="mode">
+          <i class="fa-solid fa-moon fa-sm"></i>
+          <i class="fa-solid fa-sun fa-sm"></i>
+          <div class="ball"></div>
+        </label>        
+      </div>
+    </header>
+    <!-- final header -->
+
+    <!-- hero-->
+    <section id="hero" class="hero d-flex align-items-center">
+      <div class="container">
+        <div class="row gy-4 d-flex justify-content-between">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
+            <h2 data-aos="fade-up">CELULAR EMPRESARIAL</h2>
+            <p data-aos="fade-up" data-aos-delay="100" style='text-align:justify'>MOBILIDADE PARA FALAR, LIBERDADE PARA ESCOLHER! TENHA O MELHOR PLANO DE CELULAR CORPORATIVO PARA SUA EMPRESA!</p>
+            <div class="row gy-4" data-aos="fade-up" data-aos-delay="400">
+
+
+
+            </div>
+          </div>
+
+          <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
+            <img src="../img/undraw_mobile_app_re_catg (1).svg" class="img-fluid mb-3 mb-lg-0" alt="">
+          </div>
+
+        </div>
+      </div>
+    </section><!--final do hero-->
+
+    <main id="main">
+
+      <!-- soluções inteligentes  -->
+      <section id="solucoes-inteligentes" class="solucoes-inteligentes">
+        <div class="container">
+
+          <div class="section-header">
+            <h2>O melhor da telefonia móvel para a sua empresa</h2>
+          </div>
+
+          <div class="row gy-4">
+
+            <div class="col-lg-4 col-md-6 solucao-item d-flex" data-aos="fade-up">
+              <div class="icon flex-shrink-0"><i class="fa-solid fa-piggy-bank" style="color: #8C1127;"></i>
+              </div>
+              <div>
+                <h4 class="title">PLANOS A PARTIR DE R$ 27,60</h4>
+                <p class="description">Planos pré-pagos de 1 a 30GB com valorem que cabem no orçamento da sua empresa.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 solucao-item d-flex" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon flex-shrink-0"><i class="fa-solid fa-pen-to-square" style="color: #8C1127;"></i></div>
+              <div>
+                <h4 class="title">PLANOS CUSTOMIZADOS</h4>
+                <p class="description">Personalize o plano de acordo com as necessidades da sua empresa e pague apenas pelo que você precisa.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 solucao-item d-flex" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon flex-shrink-0"><i class="fa-solid fa-tower-cell" style="color: #8C1127;"></i></div>
+              <div>
+                <h4 class="title">MAIOR REDE MÓVEL DO BRASIL</h4>
+                <p class="description">Conexão 4.5G com a maior cobertura do país.</p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 solucao-item d-flex" data-aos="fade-up">
+                <div class="icon flex-shrink-0"><i class="fa-solid fa-headset" style="color: #8C1127;"></i>
+                </div>
+                <div>
+                  <h4 class="title">ATENDIMENTO DIFERENCIADO</h4>
+                  <p class="description">Temos uma equipe completa e preparada para ajudar sua empresa.</p>
+                </div>
+              </div>
+  
+              <div class="col-lg-4 col-md-6 solucao-item d-flex" data-aos="fade-up" data-aos-delay="100">
+                <div class="icon flex-shrink-0"><i class="fa-solid fa-mobile-screen" style="color: #8C1127;"></i></div>
+                <div>
+                  <h4 class="title">TRAGA SEU NÚMERO</h4>
+                  <p class="description">Mude para a Telecall e mantenha o seu número.</p>
+                </div>
+              </div>
+  
+              <div class="col-lg-4 col-md-6 solucao-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon flex-shrink-0"><i class="fa-solid fa-sd-card" style="color: #8C1127;"></i></div>
+                <div>
+                  <h4 class="title">RECEBA O CHIP NA EMPRESA</h4>
+                  <p class="description">Não precisa se preocupar com a logística, entregamos o chip no seu negócio.</p>
+                </div>
+              </div>
+
+          </div>
+
+        </div>
+      </section><!-- final do soluções inteligentes -->
+
+
+      <!--Planos de Mobilidade-->
+      <section id="planos" class="planos pt-0">
+        <div class="container" data-aos="fade-up">
+
+          <div class="section-header">
+            <h2>Conheça nossos planos</h2>
+          </div>
+
+          <div class="row gy-4">
+
+              <div class="col-lg-4" data-aos="fade-left" data-aos-delay="900">
+                <div class="planos-item featured">
+                  <h3>Pré Pago - 1GB</h3>
+                  <h4><sup>R$</sup>27,60<span></span></h4>
+                  <ul>
+                    <li>1 GB de Internet</li>
+                    <li>Ligações ilimitadas</li>
+                    <li>WhatsApp ilimitado*</li>
+                  </ul>
+                  <a id="a1" href="https://telecall.com" class="planos-btn">Comprar</a>
+                </div>
+              </div>
+    
+              <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                  <div class="planos-item featured">
+                    <h3>Pré Pago - 2GB</h3>
+                    <h4><sup>R$</sup>36,90<span></span></h4>
+                    <ul>
+                      <li>2 GB de Internet</li>
+                      <li>Ligações ilimitadas</li>
+                      <li>WhatsApp ilimitado*</li>
+                    </ul>
+                    <a id="a1" href="https://telecall.com" class="planos-btn">Comprar</a>
+                  </div>
+                </div>
+    
+              <div class="col-lg-4" data-aos="fade-right" data-aos-delay="900">
+                <div class="planos-item featured">
+                  <h3>Pré Pago - 5GB</h3>
+                  <h4><sup>R$</sup>46,10<span></span></h4>
+                  <ul>
+                    <li>5 GB de Internet</li>
+                    <li>Ligações ilimitadas</li>
+                    <li>WhatsApp ilimitado*</li>
+                  </ul>
+                  <a href="https://telecall.com" class="planos-btn">Comprar</a>
+                </div>
+              </div>
+
+              <div class="col-lg-4" data-aos="fade-left" data-aos-delay="900">
+                <div class="planos-item featured">
+                  <h3>Pré Pago - 10GB</h3>
+                  <h4><sup>R$</sup>55,30<span></span></h4>
+                  <ul>
+                    <li>10 GB de Internet</li>
+                    <li>Ligações ilimitadas</li>
+                    <li>WhatsApp ilimitado*</li>
+                  </ul>
+                  <a href="https://telecall.com" class="planos-btn">Comprar</a>
+                </div>
+              </div>
+    
+              <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                  <div class="planos-item featured">
+                    <h3>Pré Pago - 15GB</h3>
+                    <h4><sup>R$</sup>73,80<span></span></h4>
+                    <ul>
+                      <li>15 GB de Internet</li>
+                      <li>Ligações ilimitadas</li>
+                      <li>WhatsApp ilimitado*</li>
+                    </ul>
+                    <a href="https://telecall.com" class="planos-btn">Comprar</a>
+                  </div>
+                </div>
+    
+              <div class="col-lg-4" data-aos="fade-right" data-aos-delay="900">
+                <div class="planos-item featured">
+                  <h3>Pré Pago - 30GB</h3>
+                  <h4><sup>R$</sup>120,00<span></span></h4>
+                  <ul>
+                    <li>30 GB de Internet</li>
+                    <li>Ligações ilimitadas</li>
+                    <li>WhatsApp ilimitado*</li>
+                  </ul>
+                  <a href="https://telecall.com" class="planos-btn">Comprar</a>
+                </div>
+              </div>
+    
+            </div>
+        </div>
+      </section><!--final planos de mobilidade-->
+      
+
+      <!--sticky icon--> 
+
+      <div class="sticky-icon">
+          <a href="https://api.whatsapp.com/send?phone=552130301010&text=%23Comercial" class="wpp"><i class="fa-brands fa-whatsapp"></i> Whatsapp </a>
+          <a href="https://www.facebook.com/TelecallBr" class="facebook"><i class="fa-brands fa-facebook-f"></i> Facebook </a>
+          <a href="https://www.instagram.com/telecallbr/" class="instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          <a href="#" class="linkedin"><i class="fa-brands fa-linkedin-in"></i> Linkedin </a>   
+      </div>
+
+  <!--final sticky icon-->
+
+    </main><!--fim main-->
+    
+
+    <!--footer/rodapé-->
+    <footer id="footer" class="footer">
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-info">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <img src="../img/logotelecallbranca.png">
+            </a>
+
+          <hr>
+            
+            <p>Institucional</p>
+            <p>Depoimentos</p>
+            <p>Carreiras</p>
+            <p>Contato</p>
+            <p>Vendas</p>
+            <p>FAQ</p>
+            <p>Política e Privacidade</p>
+
+            <p>Contratos</p>
+
+            <p>Manual dos Telefones</p>
+            <p>Prestação STFC</p>
+            <p>Adesão e Prestação do SCM BL</p>
+            <p>Adesão e Prestação do SCM IP</p>
+            <p>Prestação SMP</p>
+            <p>Cobertura SMP</p>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Internet</h4>
+            <ul>
+              <li><a href="#">Link Dedicado</a></li>
+              <li><a href="#">Banda Larga</a></li>
+              <li><a href="#">Wi-Fi</a></li>
+            </ul>
+
+            <h4>Outras Soluções</h4>
+            <ul>
+              <li><a href="#">Outsourcing de Hardware</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Telephony</h4>
+            <ul>
+              <li><a href="#">PABX IP Virtual</a></li>
+              <li><a href="#">E1</a></li>
+              <li><a href="#">Números 0800 e 40XX</a></li>
+            </ul>
+
+            <h4>Mobility</h4>
+            <ul>
+              <li><a href="#">Celular Empresarial</a></li>
+              <li><a href="#">MVNA</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Networks and Infraestructure</h4>
+            <ul>
+              <li><a href="#">Ponto-a-Ponto</a></li>
+              <li><a href="#">MPLS</a></li>
+              <li><a href="#">Fibra Apagada a Dutos</a></li>
+              <li><a href="#">Co-location</a></li>
+            </ul>
+      </div>
+
+      <div class="container mt-4">
+        <div class="copyright">
+          Copyright <strong><span>&copy; Telecall</span></strong>. Todos os direitos reservados
+        </div>
+      </div>
+
+    </footer>
+  </div>
+  <!--fim footer/rodapé-->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-chevron-up" style="color: white"></i></a>
+
+  <div id="preloader"></div>
+
+  <!--referências ao js-->
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../vendor/aos/aos.js"></script>
+
+  <!--referência js-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/darklightmode.js"></script>
+  <script src="../js/acessibilidade.js"></script>
+</body>
+
+</html>

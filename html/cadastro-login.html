@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!--favicon-->
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="../favicon_io/site.webmanifest">
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/cadastro-login.css">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <title>Entrar</title>
+</head>
+
+<body class="text-center {{ darkMode ? 'dark' : '' }}">
+        <!-- HTML do modal de erro -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Erro</h3>
+        <p id="errorMessage"></p>
+        </div>
+    </div>
+    
+    <div id="content">
+    <div class="bgAnimation" id="bgAnimation">
+        <div class="backgroundAnim"></div>
+    </div>
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+        <a href="index.html" class="logo d-flex align-items-center">
+            <img src="../img/logo telecall.png">
+        </a>
+        </div>
+                <!--botao flutuante aumentar e diminuir fonte-->
+                <div class="card" id="card">
+                    <div class="card-body">
+                      <h5 class="card-title">fonte</h5>
+                      <button type="button" class="btn btn-outline-primary" id="btnExibir"><i class="fa-solid fa-font fa-xs" style="color: white;"></i></button>
+                      <div class="botao-flutuante" id="botoes">
+                        <div class="btns btn-group-vertical" role="group" aria-label="Vertical button group">
+                          <button type="button" class="btn btn-primary" id="btnAumentar">aumentar</button>
+                          <button type="button" class="btn btn-primary" id="btnDiminuir">diminuir</button>
+                        </div> 
+                      </div>
+                    </div>
+                  </div>  
+        <div>
+            <input type="checkbox" class="mode" id="mode"/>
+            <label class="label" for="mode">
+            <i class="fa-solid fa-moon fa-sm"></i>
+            <i class="fa-solid fa-sun fa-sm"></i>
+            <div class="ball"></div>
+            </label>        
+        </div>
+        
+    </header>
+        <div class="section">
+            <div class="container">
+                <div class="row full-height justify-content-center">
+                    <div class="col-12 text-center align-self-center py-5">
+                        <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                            <h6 id="logcad" class="mb-0 pb-3"><span>Login</span><span>Cadastrar</span></h6>
+                            <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+                            <label for="reg-log"></label>
+                            <div class="card-3d-wrap mx-auto" id="form">
+                                <div class="card-3d-wrapper">
+                                    <div class="card-front">
+                                        <div class="center-wrap">
+                                            <div class="section text-center">
+                                                <h4 class="mb-4 pb-3">Login Pessoa Física</h4>
+                                                <h6 id="pf-pj" class="pf-pj">É Pessoa Jurídica?<a href="../html/cadastro-login-pj.html">Faça login aqui!</a></h6>
+                                                <div class="form-group">
+                                                    <input type="text" name="loginCPF" class="form-style" oninput="formatarCPF(this)" placeholder="Digite seu CPF" id="loginCPF" autocomplete="off" required>
+                                                </div>	
+                                                <div class="form-group mt-2">
+                                                    <input type="password" name="loginPassword" class="form-style" placeholder="Digite sua senha" id="loginPassword" autocomplete="off" required>
+                                                </div>
+                                                <a class="btn mt-4" id="btnLog" onclick="entrar()">Entrar</a>
+                                                <a href="../html/index.html" class="btn mt-4" id="VoltarLogPF">Voltar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-back">
+                                        <div class="center-wrap" id="centerwrap">
+                                            <div class="section text-center">
+
+                                                <h4 class="mb-4 pb-3">Cadastre-se como Pessoa Física</h4>
+
+                                                <h6 id="pf-pj" class="pf-pj">É Pessoa Jurídica?<a href="../html/cadastro-login-pj.html">Cadastre-se aqui!</a></h6>
+
+                                                <div class="form-group">
+                                                    <label id="labelNome" for="name">Nome Completo</label>
+                                                    <input type="text" name="name" class="form-style" placeholder="Digite seu nome completo" id="name" onblur="fullNameValidation()" autocomplete="off" required>
+                                                    <div id="barraErroNome" class="barra-erro"></div>
+                                                </div>
+
+                                                <div class="form-group mt-2">
+                                                    <label id="LabelDataNasc" for="birthdate">Data de Nascimento</label>
+                                                    <input type="date" name="birthdate" class="form-style" id="birthdate"  onblur="verificarIdade()" autocomplete="off" required>
+                                                </div>
+
+                                                <div class="form-group mt-2">
+                                                    <label id="LabelNomeMaterno" for="maternalname">Nome Materno</label>
+                                                    <input type="text" name="maternalname" class="form-style" placeholder="Digite o nome materno" id="maternalname" onblur="motherNameValidation()" autocomplete="off" required>
+                                                </div>	
+
+                                                <div class="form-group mt-2">
+                                                    <label id="LabelNumeroCelular" for="numbercel">Celular</label>
+                                                    <input type="tel" name="numbercel" class="form-style"  placeholder="(xx) xxxx-xxxx" id="numbercel" onblur="verificarNumeroCelular()" required>
+                                                  </div>
+                                                  
+
+                                                <div class="form-group mt-2">
+                                                    <label id="LabelNumeroTelefone" for="numbertel">Telefone Fixo</label>
+                                                    <input type="tel" name="numbertel" class="form-style" placeholder="(xx) xxxx-xxxx" id="numbertel"oninput="formatarTel(this)"onblur="verificaTelefoneFixo()" autocomplete="off" required>
+                                                </div>
+
+                                                <div class="form-group mt-2">
+                                                    <label id="LabelUser" for="user">Usuário</label>
+                                                    <input type="text" name="user" class="form-style" placeholder="Digite o nome de usuário" id="user" onblur="userNameValidation()" autocomplete="off" required>
+                                                </div>
+                                                
+                                                <div class="form-group mt-2">
+                                                    <label id="LabelCpf" for="cpf">CPF</label>
+                                                    <input type="text" name="cpf" class="form-style" placeholder="Digite o CPF" id="cpf" oninput="formatarCPF(this)" onblur="verificarCPF()" autocomplete="off" required>
+                                                </div>
+
+                                                <div class="form-group mt-2">
+                                                    <label id="LabelSenha" for="password">Senha</label>
+                                                    <input type="password" name="password" class="form-style" placeholder="Digite a senha" id="password" autocomplete="off" onblur="verifySenha(this)" required>
+                                                </div>
+
+                                                <div class="form-group mt-2">
+                                                    <label id="LabelConfirmarSenha" for="ConfirmPassword">Confirme a senha</label>
+                                                    <input type="password" name="ConfirmPassword" class="form-style" placeholder="Digite a senha novamente" id="ConfirmPassword" onblur="compareSenha(this)" autocomplete="off" required>
+                                                </div>
+
+                                                <div class="gender-inputs">
+                                                    <div class="gender-title">
+                                                        <h6>Gênero</h6>
+                                                    </div>
+
+                                                <div class="gender-group">
+                                                    <div class="gender-input" id="gender">
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="gender" id="female" value="female" required>
+                                                            <label class="form-check-label" for="female">Feminino</label>
+                                                        </div>
+                    
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                                                            <label class="form-check-label" for="male">Masculino</label>
+                                                        </div>
+                                                        
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="gender" id="others" value="others" required>
+                                                            <label class="form-check-label" for="others">Outro</label>
+                                                        </div>
+                                                            
+                                                        <div class="form-check form-check-inline">
+                                                            <input class="form-check-input" type="radio" name="gender" id="none" value="none" required>
+                                                            <label class="form-check-label" for="none">Prefiro não dizer</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-header2">
+                                                <div class="title-address">
+                                                    <h5>Endereço</h5>
+                                                </div>
+                                            </div>
+                    
+
+                                            <div class="form-group mt-2">
+                                                <form class="row g-3" >
+
+                                                    <div class="col-md-6">
+                                                        <label id="LabelCEP" for="cep" class="form-label">CEP</label>
+                                                        <input type="text" class="form-style" placeholder="Digite o CEP" id="cep" name="cep" onblur="pesquisacep(this.value);" maxlength="9" onkeyup="handleZipCode(event)">
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <label id="LabelRua" for="rua" class="form-label">Rua</label>
+                                                        <input type="text" class="form-style" placeholder="Digite a rua" id="rua" name="street">
+                                                    </div>
+                                        
+                                                    <div class="col-md-6">
+                                                        <label id="LabelNumero" for="number" class="form-label">Número</label>
+                                                        <input type="text" class="form-style" placeholder="Digite o número" id="number" name="number">
+                                                    </div>
+                                        
+                                                    <div class="col-md-6">
+                                                        <label id="LabelBairro" for="bairro" class="form-label">Bairro</label>
+                                                        <input type="text" class="form-style" placeholder="Digite o Bairro" id="bairro" name="bairro">
+                                                    </div>
+                                        
+                                                    <div class="col-md-6">
+                                                        <label id="LabelComplemento" for="complemento" class="form-label">Complemento</label>
+                                                        <input type="text" class="form-style" placeholder="Digite o complemento" id="complemento" name="complemento">
+                                                    </div>
+                                        
+                                                    <div class="col-md-6">
+                                                        <label id="LabelCidade" for="cidade" class="form-label">Cidade</label>
+                                                        <input type="text" class="form-style" placeholder="Digite a cidade" id="cidade" name="cidade">
+                                                    </div>
+                                        
+                                                    <div class="col-md-12">
+                                                    <label id="LabelEstado" for="state" class="form-label">Estado</label>
+                                                        <select id="state" class="form-style" name="state">
+                                                            <option selected>Escolha o estado...</option>
+                                                            <option>Acre (AC)</option>
+                                                            <option>Alagoas (AL)</option>
+                                                            <option>Amapá (AP)</option>
+                                                            <option>Amazonas (AM)</option>
+                                                            <option>Bahia (BH)</option>
+                                                            <option>Ceará (CE)</option>
+                                                            <option>Distrito Federal (DF)</option>
+                                                            <option>Espírito Santo (ES)</option>
+                                                            <option>Goiás (GO)</option>
+                                                            <option>Maranhão (MA)</option>
+                                                            <option>Mato Grosso (MT)</option>
+                                                            <option>Mato Grosso do Sul (MS)</option>
+                                                            <option>Minas Gerais (MG)</option>
+                                                            <option>Pará (PA)</option>
+                                                            <option>Paraíba (PB)</option>
+                                                            <option>Paraná (PR)</option>
+                                                            <option>Pernambuco (PE)</option>
+                                                            <option>Piauí (PI)</option>
+                                                            <option>Rio de Janeiro (RJ)</option>
+                                                            <option>Rio Grande do Norte (RN)</option>
+                                                            <option>Rio Grande do Sul (RS)</option>
+                                                            <option>Rondônia (RO)</option>
+                                                            <option>Roraima (RR)</option>
+                                                            <option>Santa Catarina (SC)</option>
+                                                            <option>São Paulo (SP)</option>
+                                                            <option>Sergipe (SE)</option>
+                                                            <option>Tocantis (TO)</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+
+                                                <a class="btn mt-4" id="btnCad" onclick="cadastrar()">Finalizar Cadastro</a>
+                                                <a href="../html/index.html" class="btn mt-4" id="VoltarCadPF">Voltar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Mensagem</h3>
+      <p id="modalMessage"></p>
+    </div>
+</div>
+  
+    <div id="preloader"></div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/areadocliente.js"></script>
+    <script src="../js/cadastro-login.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/darklightmode.js"></script>
+    <script src="../js/acessibilidade.js"></script>
+</body>
+</html>

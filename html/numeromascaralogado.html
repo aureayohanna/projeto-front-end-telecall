@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>CPaaS - Número Máscara</title>
+
+  <!--favicon-->
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="../favicon_io/site.webmanifest">
+
+  <!--google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!--referencias ao css-->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="../vendor/aos/aos.css" rel="stylesheet">
+  <link href="../css/cpaas.css" rel="stylesheet">
+</head>
+
+<body class="text-center {{ darkMode ? 'dark' : '' }}">
+  <div id="content">
+    <!-- header -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="../img/logo telecall.png">
+        </a>
+
+        <i class="mobile-nav-toggle mobile-nav-show fa-solid fa-bars" style="color: #0E4C73;"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none fa-solid fa-xmark"></i> 
+        <nav id="navbar" class="navbar">
+            <ul>
+              <li><a href="indexlogado.html">Home</a></li>
+              <li><a href="cpaaslogado.html">Modavo</a></li>
+              <li><a href="2falogado.html">2FA</a></li>
+              <li><a href="numeromascaralogado.html">Número Máscara</a></li>
+              <li><a href="googleverifiedcallslogado.html">Google Verified Calls</a></li>
+              <li><a href="smsprogramavellogado.html">SMS Programável</a></li>
+              <li><a class="area-do-cliente" href="areadocliente.html" onclick="sair()">Sair</a></li>   
+                <!--botao flutuante aumentar e diminuir fonte-->
+                <div class="card" id="card">
+                  <div class="card-body">
+                    <h5 class="card-title">fonte</h5>
+                    <button type="button" class="btn btn-outline-primary" id="btnExibir"><i class="fa-solid fa-font fa-xs" style="color: white;"></i></button>
+                    <div class="botao-flutuante" id="botoes">
+                      <div class="btns btn-group-vertical" role="group" aria-label="Vertical button group">
+                        <button type="button" class="btn btn-primary" id="btnAumentar">aumentar</button>
+                        <button type="button" class="btn btn-primary" id="btnDiminuir">diminuir</button>
+                      </div> 
+                    </div>
+                  </div>
+                </div>         
+            </ul>
+        </nav>
+      </div>
+      <input type="checkbox" class="mode" id="mode"/>
+      <label class="label" for="mode">
+        <i class="fa-solid fa-moon fa-sm"></i>
+        <i class="fa-solid fa-sun fa-sm"></i>
+        <div class="ball"></div>
+      </label>        
+    </header>
+    <!-- final header -->
+
+  <!--hero modavo-->
+  <div class="hero px-4 pt-5 my-5 text-center border-bottom">
+    <div class="overflow-hidden" style="max-height: 30vh;">
+      <div class="container px-5">
+        <img src="../img/logomodavo.png" class="modavo img-fluid" alt="modavo imagem" width="700" height="800" loading="lazy" data-aos="fade-down" data-aos-delay="100">
+      </div>
+    </div>
+    <h1 class="display-4 fw-bold text-body-emphasis" data-aos="fade-down" data-aos-delay="200">CPaaS Platform</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4" data-aos="fade-down" data-aos-delay="300">O CPaaS, com sua escalabilidade, flexibilidade, autenticação e segurança aprimoradas, está revolucionando o modo como as empresas habilitadas em nuvem implementam comunicações de voz, SMS e vídeo.</p>
+    </div>
+  </div>
+  <!--final hero-->
+
+
+    <!-- Número Máscara-->
+    <main id="main">
+      <div class="container col-xxl-8">
+        <div class="row flex-lg-row-reverse align-items-center">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <a href="https://storyset.com/online"><img src="../img/calling-animate.svg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy" data-aos="fade-up-left"></a>
+          </div>
+          <div class="col-lg-6" data-aos="fade-right">
+            <h2 class="title">Número Máscara</h2>
+            <h5 class="subtitle2">Proteja identidades profissionais</h5>
+            <p class="lead">Garanta aos seus clientes a capacidade de fazer chamadas e enviar
+                mensagens sem expor seus números de telefone pessoais.</p>
+            <li class="listabeneficios"><span class="fa-li"></span>· Mascare um número de telefone para interações com mais privacidade.</li>
+            <li class="listabeneficios"><span class="fa-li"></span>· Permite que empresas façam negócios usando menos números de telefone.</li>
+            <li class="listabeneficios"><span class="fa-li"></span>· Oferece uma experiência mais segura e profissional.</li>
+          </div>
+        </div>
+      </div>
+      <!--final Número Máscara-->
+
+        <!-- como funciona?  -->
+        <section id="planos" class="planos pt-0">
+          <div class="container" data-aos="fade-up">
+
+            <div class="section-header">
+              <h2>COMO FUNCIONA?</h2>
+            </div>
+
+            <div class="row gy-4">
+
+              <div class="col-lg-4" data-aos="fade-left" data-aos-delay="900">
+                <div class="planos-item">
+                  <ul>
+                    <h3 id="titulo-planos1">Usuário faz uma
+                        chamada através
+                        de um aplicativo.
+                    </h3>
+                  </ul>
+                  <img src="../img/Modern woman-amico.svg" class="fa-image-portrait">
+                  <ul>
+                    <li>Ex: usuário liga para o
+                        entregador ou motorista
+                        de taxi ou entra em
+                        contato com a central de
+                        atendimento.                    
+                        </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="planos-item">
+                    <ul>
+                        <h3 id="titulo-planos2">Plataforma
+                            mascara o número
+                            original.
+                        </h3>
+                      </ul>
+                      <img src="../img/Privacy policy-rafiki.svg" class="fa-image-portrait">
+                      <ul>
+                        <li>A plataforma recebe a
+                            chamada e mascara o
+                            número antes de conectar
+                            com o destinatário.                    
+                            </li>
+                      </ul>
+                </div>
+              </div>
+
+              <div class="col-lg-4" data-aos="fade-right" data-aos-delay="900">
+                <div class="planos-item">
+                    <ul>
+                        <h3 id="titulo-planos3">Ambas as partes
+                            são conectadas.                        
+                        </h3>
+                      </ul><br>
+                      <img src="../img/Cell phone-rafiki.svg" class="fa-image-portrait">
+                      <ul>
+                        <li>A plataforma conecta ambas
+                            as partes mantendo a
+                            privacidade dos dois.                    
+                            </li>
+                      </ul>
+                </div>
+              </div>
+
+          </section> <!--final como funciona?-->   
+            
+            <!--benefícios-->  
+            <div class="section-header">
+              <h2>RECURSOS AVANÇADOS</h2>
+            </div>
+
+            <ul class="fa-ul">
+                <li><span class="fa-li"><i class="fa-solid fa-angles-right" style="color: #730318"></i></span>SMS – Número máscara é totalmente funcional para chamadas de voz e SMS.</li>
+                <li><span class="fa-li"><i class="fa-solid fa-angles-right" style="color: #730318"></i></span>Geo Match – Combine o código do país do número mascarado com o da chamada de origem passando pro cliente a impressão de que vocês estão na mesma região</li>
+                <li><span class="fa-li"><i class="fa-solid fa-angles-right" style="color: #730318"></i></span>Gestão de Sessões – Habilite números máscara permanentes, bloqueie chamadas indesejadas, validade de sessão e etc.</li>
+                <li><span class="fa-li"><i class="fa-solid fa-angles-right" style="color: #730318"></i></span>Relatórios – Acesso direto do cliente à relatórios detalhados.</li>
+                <li><span class="fa-li"><i class="fa-solid fa-angles-right" style="color: #730318"></i></span>Números Simultâneos - Use o mesmo número máscara em várias ligações simultâneas.</li>
+                <li><span class="fa-li"><i class="fa-solid fa-angles-right" style="color: #730318"></i></span>Triagem de Conteúdo – Recurso SMS onde você pode sinalizar conteúdos sensíveis para proteger dados do cliente.</li>
+                <li><span class="fa-li"><i class="fa-solid fa-angles-right" style="color: #730318"></i></span>Escalabilidade Ilimitada – compre e adicione números conforme necessário.</li>
+            </ul>
+            <!--final benefícios-->
+
+            <!--quem usa?-->
+            <div class="section-header">
+                <h2>QUEM USA?</h2>
+            </div>
+
+        <section id="horizontal-pricing" class="horizontal-pricing pt-0">
+          <div class="container" data-aos="fade-up">
+            <div class="row gy-4 pricing-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                <h3>Apps de Transporte</h3>
+              </div>
+              <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                <img src="../img/appstransporte.png" class="img-fluid" alt="">
+              </div>
+              <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                <ul>
+                  <li><i class="bi bi-check"></i>Permite que motorista e
+                    passageiro se comuniquem
+                    sem compartilhar seus
+                    números pessoais.</li>
+                </ul>
+              </div>
+              <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                <i class="fa-solid fa-taxi fa-2xl"></i>
+              </div>
+            </div>
+
+            <div class="row gy-4 pricing-item featured mt-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                <h3>Apps de Relacionamento</h3>
+              </div>
+              <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                <img src="../img/appsrelacionamento.png" class="img-fluid" alt="">
+              </div>
+              <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                <ul>
+                  <li><i class="bi bi-check"></i>Permite uma maneira
+                    privada e segura para
+                    usuários interagirem sem
+                    expor contatos pessoais.
+                    </li>
+                </ul>
+              </div>
+              <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                <i class="fa-solid fa-heart-circle-check fa-2xl" style="color:#fff"></i>
+              </div>
+            </div>
+
+            <div class="row gy-4 pricing-item mt-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                <h3>E-Commerce</h3>
+              </div>
+              <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                <img src="../img/ebay.png" class="img-fluid" alt="">
+              </div>
+              <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                <ul>
+                  <li><i class="bi bi-check"></i>Permite que clientes
+                    entrem em contato através
+                    do aplicativo. Podem
+                    também integrar chamadas
+                    internacionais.</li>
+                </ul>
+              </div>
+              <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+              </div>
+            </div>
+
+            <div class="row gy-4 pricing-item featured mt-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                <h3>Entregas & Logística</h3>
+              </div>
+              <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                <img src="../img/appscomida.png" class="img-fluid" alt="">
+              </div>
+              <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                <ul>
+                  <li><i class="bi bi-check"></i>Mantenha seu cliente
+                    informado sobre
+                    entregas e serviços, tire
+                    dúvidas, etc</li>
+                </ul>
+              </div>
+              <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                <i class="fa-solid fa-truck-fast fa-2xl" style="color:#fff"></i>
+              </div>
+            </div>
+
+          </div>
+        </section>
+        <!--final quem usa?-->
+
+        <!--quem mais pode usar?-->
+
+
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="section-header">
+                    <h2>QUEM MAIS PODE USAR?</h2>
+                </div>
+              <div class="col-10 col-sm-8 col-lg-6">
+                <a href="https://storyset.com/online"><img src="../img/Online page-amico.svg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy" data-aos="fade-up-left"></a>
+              </div>
+              <div class="col-lg-6">
+                <h5 class="subtitle2" data-aos="fade-right">43% das empresas brasileiras adotaram o Home Office como padrão.</h5>
+                <h5 class="subtitle2" data-aos="fade-right">Mesmo após o fim da pandemia, estatísticas indicam que o modelo de trabalho Home Office deve crescer cerca de 30%.</h5>
+                <p class="lead" data-aos="fade-right">Funcionários que não possuem celular empresarial ou ramal
+                    virtual podem se beneficiar do uso de um número máscara
+                    permanente do trabalho vinculado ao seu telefone celular,
+                    assim protegendo seus número pessoais.</p>
+                </div>
+            </div>
+          </div>
+
+    </main>
+
+      <!--sticky icon--> 
+
+      <div class="sticky-icon">
+          <a href="https://api.whatsapp.com/send?phone=552130301010&text=%23Comercial" class="wpp"><i class="fa-brands fa-whatsapp"></i> Whatsapp </a>
+          <a href="https://www.facebook.com/TelecallBr" class="facebook"><i class="fa-brands fa-facebook-f"></i> Facebook </a>
+          <a href="https://www.instagram.com/telecallbr/" class="instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          <a href="#" class="linkedin"><i class="fa-brands fa-linkedin-in"></i> Linkedin </a>   
+      </div>
+
+  <!--final sticky icon-->
+
+    <!--footer/rodapé-->
+    <footer id="footer" class="footer">
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-info">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <img src="../img/logotelecallbranca.png">
+            </a>
+
+          <hr>
+            
+            <p>Institucional</p>
+            <p>Depoimentos</p>
+            <p>Carreiras</p>
+            <p>Contato</p>
+            <p>Vendas</p>
+            <p>FAQ</p>
+            <p>Política e Privacidade</p>
+
+            <p>Contratos</p>
+
+            <p>Manual dos Telefones</p>
+            <p>Prestação STFC</p>
+            <p>Adesão e Prestação do SCM BL</p>
+            <p>Adesão e Prestação do SCM IP</p>
+            <p>Prestação SMP</p>
+            <p>Cobertura SMP</p>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Internet</h4>
+            <ul>
+              <li><a href="#">Link Dedicado</a></li>
+              <li><a href="#">Banda Larga</a></li>
+              <li><a href="#">Wi-Fi</a></li>
+            </ul>
+
+            <h4>Outras Soluções</h4>
+            <ul>
+              <li><a href="#">Outsourcing de Hardware</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Telephony</h4>
+            <ul>
+              <li><a href="#">PABX IP Virtual</a></li>
+              <li><a href="#">E1</a></li>
+              <li><a href="#">Números 0800 e 40XX</a></li>
+            </ul>
+
+            <h4>Mobility</h4>
+            <ul>
+              <li><a href="#">Celular Empresarial</a></li>
+              <li><a href="#">MVNA</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Networks and Infraestructure</h4>
+            <ul>
+              <li><a href="#">Ponto-a-Ponto</a></li>
+              <li><a href="#">MPLS</a></li>
+              <li><a href="#">Fibra Apagada a Dutos</a></li>
+              <li><a href="#">Co-location</a></li>
+            </ul>
+      </div>
+
+      <div class="container mt-4">
+        <div class="copyright">
+          Copyright <strong><span>&copy; Telecall</span></strong>. Todos os direitos reservados
+        </div>
+      </div>
+
+    </footer>
+    <!--fim footer/rodapé-->
+  </div>
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-chevron-up" style="color: white"></i></a>
+
+  <div id="preloader"></div>
+
+  <!--referências ao js-->
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../vendor/aos/aos.js"></script>
+
+  <!--referência js-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/acessibilidade.js"></script>
+  <script src="../js/darklightmode.js"></script>
+</body>
+
+</html>

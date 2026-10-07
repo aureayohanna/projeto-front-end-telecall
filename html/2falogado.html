@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>CPaaS - 2FA</title>
+
+  <!--favicon-->
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="../favicon_io/site.webmanifest">
+
+  <!--google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!--referencias ao css-->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="../vendor/aos/aos.css" rel="stylesheet">
+  <link href="../css/cpaas.css" rel="stylesheet">
+</head>
+
+<body class="text-center {{ darkMode ? 'dark' : '' }}">
+  <div id="content">
+    <!-- header -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="../img/logo telecall.png">
+        </a>
+
+        <i class="mobile-nav-toggle mobile-nav-show fa-solid fa-bars" style="color: #0E4C73;"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none fa-solid fa-xmark"></i> 
+        <nav id="navbar" class="navbar">
+            <ul>
+              <li><a href="indexlogado.html">Home</a></li>
+              <li><a href="cpaaslogado.html">Modavo</a></li>
+              <li><a href="2falogado.html">2FA</a></li>
+              <li><a href="numeromascaralogado.html">Número Máscara</a></li>
+              <li><a href="googleverifiedcallslogado.html">Google Verified Calls</a></li>
+              <li><a href="smsprogramavellogado.html">SMS Programável</a></li>
+              <li><a class="area-do-cliente" href="areadocliente.html" onclick="sair()">Sair</a></li>     
+                <!--botao flutuante aumentar e diminuir fonte-->
+                <div class="card" id="card">
+                  <div class="card-body">
+                    <h5 class="card-title">fonte</h5>
+                    <button type="button" class="btn btn-outline-primary" id="btnExibir"><i class="fa-solid fa-font fa-xs" style="color: white;"></i></button>
+                    <div class="botao-flutuante" id="botoes">
+                      <div class="btns btn-group-vertical" role="group" aria-label="Vertical button group">
+                        <button type="button" class="btn btn-primary" id="btnAumentar">aumentar</button>
+                        <button type="button" class="btn btn-primary" id="btnDiminuir">diminuir</button>
+                      </div> 
+                    </div>
+                  </div>
+                </div>           
+            </ul>
+        </nav>
+      </div>
+      <input type="checkbox" class="mode" id="mode"/>
+      <label class="label" for="mode">
+        <i class="fa-solid fa-moon fa-sm"></i>
+        <i class="fa-solid fa-sun fa-sm"></i>
+        <div class="ball"></div>
+      </label>        
+    </header>
+    <!-- final header -->
+
+    <!--hero modavo-->
+    <div class="hero px-4 pt-5 my-5 text-center border-bottom">
+      <div class="overflow-hidden" style="max-height: 30vh;">
+        <div class="container px-5">
+          <img src="../img/logomodavo.png" class="modavo img-fluid" alt="modavo imagem" width="700" height="800" loading="lazy" data-aos="fade-down" data-aos-delay="100">
+        </div>
+      </div>
+      <h1 class="display-4 fw-bold text-body-emphasis" data-aos="fade-down" data-aos-delay="200">CPaaS Platform</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4" data-aos="fade-down" data-aos-delay="300">O CPaaS, com sua escalabilidade, flexibilidade, autenticação e segurança aprimoradas, está revolucionando o modo como as empresas habilitadas em nuvem implementam comunicações de voz, SMS e vídeo.</p>
+      </div>
+    </div>
+    <!--final hero-->
+
+
+    <!--2FA-->
+    <main id="main">
+    <div class="container col-xxl-8">
+      <div class="row flex-lg-row-reverse align-items-center">
+        <div class="col-10 col-sm-8 col-lg-6">
+          <a href="https://storyset.com/online"><img src="../img/Enter OTP-amico.svg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy" data-aos="fade-up-left"></a>
+        </div>
+        <div class="col-lg-6" data-aos="fade-right">
+          <h2 class="title">2FA</h2>
+          <h4 class="subtitle1">Two-Factor Authentication</h4>
+          <h5 class="subtitle2">Autenticação de dois fatores</h5>
+          <p class="lead">O 2FA é um procedimento de segurança que garante que serão
+              necessários 2 fatores únicos para liberação de uma ação. O
+              primeiro fator é a senha que o usuário e o segundo pode ser
+              autenticado via token, via detecção de impressão digital,
+              reconhecimento facial, código enviado via sms, entre outros.</p>
+        </div>
+      </div>
+    </div>
+    <!--final 2FA-->
+
+      <!-- como funciona?  -->
+      <section id="planos" class="planos pt-0">
+        <div class="container" data-aos="fade-up">
+
+          <div class="section-header">
+            <h2>COMO FUNCIONA?</h2>
+          </div>
+
+          <div class="row gy-4">
+
+            <div class="col-lg-3" data-aos="fade-left" data-aos-delay="900">
+              <div class="planos-item">
+                <img src="../img/Security On-amico.svg" class="fa-image-portrait">
+                <ul>
+                  <li>Usuário acessa seu site o
+                      aplicativo e digita a senha
+                      cadastrada para entrar em
+                      seu perfil ou completar uma
+                      transação.
+                      </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-3" data-aos="fade-left" data-aos-delay="900">
+              <div class="planos-item">
+                <img src="../img/Authentication-bro.svg" class="fa-image-portrait">
+                <ul>
+                  <li>A Telecall recebe a tentativa
+                      de login e solicita que o
+                      usuário insira seu número de
+                      telefone para autorizar o
+                      acesso.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-3" data-aos="fade-right" data-aos-delay="900">
+              <div class="planos-item">
+                <img src="../img/Authentication-amico.svg" class="fa-image-portrait">
+                <h3 class="text-center">Call Center</h3>
+                <ul>
+                  <li>Após inserir seu número, a
+                      Telecall envia para o usuário
+                      por SMS, chamada ou e-mail
+                      um código PIN de uso único.</li>
+                  <center><i class="fa-solid fa-arrow-down fa-3x" style="color: #730318"></i></center>
+                  <li>Esse código PIN é também
+                      conhecido como OTP (One
+                      Time Password).
+                      </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-3" data-aos="fade-right" data-aos-delay="900">
+              <div class="planos-item">
+                <img src="../img/Typing-bro.svg" class="fa-image-portrait">
+                <ul>
+                  <li>O usuário insere o código no
+                      site ou aplicativo para
+                      concluir o processo de
+                      verificação.
+                      </li>
+                </ul>
+              </div>
+            </div>
+            <!--final como funciona?-->   
+          
+          <!--benefícios-->  
+          <div class="section-header">
+            <h2>BENEFÍCIOS</h2>
+          </div>
+
+          <ul class="fa-ul">
+              <li><span class="fa-li"><i class="fa-solid fa-angles-right" style="color: #730318"></i></span>Ofereça segurança aprimorada para seus clientes.</li>
+              <li><span class="fa-li"><i class="fa-solid fa-angles-right" style="color: #730318"></i></span>Reduza casos de fraude e invasões e evite o acesso a dados por invasores.</li>
+              <li><span class="fa-li"><i class="fa-solid fa-angles-right" style="color: #730318"></i></span>Envio de OTP por meio de vários canais, incluindo SMS, voz ou e-mail.</li>
+              <li><span class="fa-li"><i class="fa-solid fa-angles-right" style="color: #730318"></i></span>Flexibilidade de canais garante que o usuário conseguirá completar a tarefa desejada
+              mesmo quando tiver problema com um deles. Exemplo: Enviar OTP por SMS, em caso de falha, enviar OTP por chamada de voz, em caso de outra falha, enviar por e-mail.</li>
+              <li><span class="fa-li"><i class="fa-solid fa-angles-right" style="color: #730318"></i></span>API simples e de rápida implementação.</li>
+              <li><span class="fa-li"><i class="fa-solid fa-angles-right" style="color: #730318"></i></span>Plataforma intuitiva que permite visualizar relatórios de uso por dia, mês ou ano e pesquisar usando diversos critérios de filtro.</li>
+          </ul>
+          <!--final benefícios-->
+
+          <!--quem usa?-->
+          <div class="section-header">
+              <h2>QUEM USA?</h2>
+          </div>
+
+              <!-- ======= Horizontal Pricing Section ======= -->
+      <section id="horizontal-pricing" class="horizontal-pricing pt-0">
+        <div class="container" data-aos="fade-up">
+          <div class="row gy-4 pricing-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <h3>Finanças</h3>
+            </div>
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <img src="../img/logosfinanças.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <ul>
+                <li><i class="bi bi-check"></i>Acesso ao portal/app.</li>
+                <li><i class="bi bi-check"></i>Autenticação para transações bancárias.</li>
+                <li><i class="bi bi-check"></i>Pagamentos Online (PicPay, PayPal).</li>
+                <li><i class="bi bi-check"></i>Digital Wallets (Google Pay, Apple Pay, Samsung Pay).</li>
+              </ul>
+            </div>
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <i class="fa-solid fa-dollar-sign fa-2xl"></i>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="row gy-4 pricing-item featured mt-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <h3>Saúde</h3>
+            </div>
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <img src="../img/amil.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <ul>
+                <li><i class="bi bi-check"></i>Acesso ao portal/app.</li>
+                <li><i class="bi bi-check"></i>Agendamentos.</li>
+                <li><i class="bi bi-check"></i>Tokens de autorização.</li>
+                <li><i class="bi bi-check"></i>Telemedicina.</li>
+              </ul>
+            </div>
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <i class="fa-solid fa-heart-pulse fa-2xl" style="color:#fff"></i>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="row gy-4 pricing-item mt-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <h3>Turismo</h3>
+            </div>
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <img src="../img/turismo.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <ul>
+                <li><i class="bi bi-check"></i>Acesso ao portal/app.</li>
+                <li><i class="bi bi-check"></i>Gestão de Reservas.</li>
+                <li><i class="bi bi-check"></i>Acesso ao histórico.</li>
+                <li><i class="bi bi-check"></i>Salvar dados de pagamentos.</li>
+                <li><i class="bi bi-check"></i>Recuperação de senha.</li>
+              </ul>
+            </div>
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <i class="fa-solid fa-truck-plane fa-2xl"></i>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="row gy-4 pricing-item featured mt-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <h3>Varejo</h3>
+            </div>
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <img src="../img/varejo.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <ul>
+                <li><i class="bi bi-check"></i>Acesso ao portal/app.</li>
+                <li><i class="bi bi-check"></i>Salvar dados de pagamento.</li>
+                <li><i class="bi bi-check"></i>Acesso ao histórico.</li>
+                <li><i class="bi bi-check"></i>Recuperação de senha.</li>
+                <li><i class="bi bi-check"></i>Recibo eletrônico.</li>
+              </ul>
+            </div>
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <i class="fa-solid fa-cart-shopping fa-2xl" style="color:#fff"></i>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="row gy-4 pricing-item mt-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <h3>Logística</h3>
+            </div>
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <img src="../img/logística.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <ul>
+                <li><i class="bi bi-check"></i>Acesso ao portal/app.</li>
+                <li><i class="bi bi-check"></i>Salvar dados de pagamentos.</li>
+                <li><i class="bi bi-check"></i>Acesso ao histórico.</li>
+                <li><i class="bi bi-check"></i>Recuperação de senha.</li>
+              </ul>
+            </div>
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <i class="fa-solid fa-cart-flatbed fa-2xl"></i>
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="row gy-4 pricing-item featured mt-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <h3>Governo</h3>
+            </div>
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <img src="../img/governo.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <ul>
+                <li><i class="bi bi-check"></i>Acesso ao portal/app.</li>
+                <li><i class="bi bi-check"></i>Gestão de Informações.</li>
+                <li><i class="bi bi-check"></i>Agendamentos.</li>
+                <li><i class="bi bi-check"></i>Recuperação de senha.</li>
+              </ul>
+            </div>
+            <div class="col-lg-3 d-flex align-items-center justify-content-center">
+              <i class="fa-solid fa-landmark-flag fa-2xl" style="color:#fff"></i>
+            </div>
+          </div><!-- End Pricing Item -->
+
+        </div>
+      </section><!-- End Horizontal Pricing Section -->
+
+          
+          <!--final quem usa?-->
+    </main>
+
+      <!--sticky icon--> 
+      <div class="sticky-icon">
+          <a href="https://api.whatsapp.com/send?phone=552130301010&text=%23Comercial" class="wpp"><i class="fa-brands fa-whatsapp"></i> Whatsapp </a>
+          <a href="https://www.facebook.com/TelecallBr" class="facebook"><i class="fa-brands fa-facebook-f"></i> Facebook </a>
+          <a href="https://www.instagram.com/telecallbr/" class="instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          <a href="#" class="linkedin"><i class="fa-brands fa-linkedin-in"></i> Linkedin </a>   
+      </div>
+
+    <!--final sticky icon-->
+
+    <!--footer/rodapé-->
+    <footer id="footer" class="footer">
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-info">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <img src="../img/logotelecallbranca.png">
+            </a>
+
+          <hr>
+            
+            <p>Institucional</p>
+            <p>Depoimentos</p>
+            <p>Carreiras</p>
+            <p>Contato</p>
+            <p>Vendas</p>
+            <p>FAQ</p>
+            <p>Política e Privacidade</p>
+
+            <p>Contratos</p>
+
+            <p>Manual dos Telefones</p>
+            <p>Prestação STFC</p>
+            <p>Adesão e Prestação do SCM BL</p>
+            <p>Adesão e Prestação do SCM IP</p>
+            <p>Prestação SMP</p>
+            <p>Cobertura SMP</p>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Internet</h4>
+            <ul>
+              <li><a href="#">Link Dedicado</a></li>
+              <li><a href="#">Banda Larga</a></li>
+              <li><a href="#">Wi-Fi</a></li>
+            </ul>
+
+            <h4>Outras Soluções</h4>
+            <ul>
+              <li><a href="#">Outsourcing de Hardware</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Telephony</h4>
+            <ul>
+              <li><a href="#">PABX IP Virtual</a></li>
+              <li><a href="#">E1</a></li>
+              <li><a href="#">Números 0800 e 40XX</a></li>
+            </ul>
+
+            <h4>Mobility</h4>
+            <ul>
+              <li><a href="#">Celular Empresarial</a></li>
+              <li><a href="#">MVNA</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Networks and Infraestructure</h4>
+            <ul>
+              <li><a href="#">Ponto-a-Ponto</a></li>
+              <li><a href="#">MPLS</a></li>
+              <li><a href="#">Fibra Apagada a Dutos</a></li>
+              <li><a href="#">Co-location</a></li>
+            </ul>
+      </div>
+
+      <div class="container mt-4">
+        <div class="copyright">
+          Copyright <strong><span>&copy; Telecall</span></strong>. Todos os direitos reservados
+        </div>
+      </div>
+
+    </footer>
+  </div>
+  <!--fim footer/rodapé-->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-chevron-up" style="color: white"></i></a>
+
+  <div id="preloader"></div>
+
+  <!--referências ao js-->
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../vendor/aos/aos.js"></script>
+
+  <!--referência js-->
+  <script src="../js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="../js/acessibilidade.js"></script>
+  <script src="../js/darklightmode.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>CPaaS</title>
+
+  <!--favicon-->
+  <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
+  <link rel="manifest" href="../favicon_io/site.webmanifest">
+
+  <!--google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!--referencias ao css-->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="../vendor/aos/aos.css" rel="stylesheet">
+  <link href="../css/cpaas.css" rel="stylesheet">
+</head>
+
+<body class="text-center {{ darkMode ? 'dark' : '' }}">
+  <div id="content">
+    <!-- header -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="../img/logo telecall.png">
+        </a>
+
+        <i class="mobile-nav-toggle mobile-nav-show fa-solid fa-bars" style="color: #0E4C73;"></i>
+        <i class="mobile-nav-toggle mobile-nav-hide d-none fa-solid fa-xmark"></i> 
+        <nav id="navbar" class="navbar">
+            <ul>
+              <li><a href="indexlogado.html">Home</a></li>
+              <li><a href="cpaaslogado.html">Modavo</a></li>
+              <li><a href="2falogado.html">2FA</a></li>
+              <li><a href="numeromascaralogado.html">Número Máscara</a></li>
+              <li><a href="googleverifiedcallslogado.html">Google Verified Calls</a></li>
+              <li><a href="smsprogramavellogado.html">SMS Programável</a></li>
+              <li><a class="area-do-cliente" href="areadocliente.html" onclick="sair()">Sair</a></li>    
+                <!--botao flutuante aumentar e diminuir fonte-->
+                <div class="card" id="card">
+                  <div class="card-body">
+                    <h5 class="card-title">fonte</h5>
+                    <button type="button" class="btn btn-outline-primary" id="btnExibir"><i class="fa-solid fa-font fa-xs" style="color: white;"></i></button>
+                    <div class="botao-flutuante" id="botoes">
+                      <div class="btns btn-group-vertical" role="group" aria-label="Vertical button group">
+                        <button type="button" class="btn btn-primary" id="btnAumentar">aumentar</button>
+                        <button type="button" class="btn btn-primary" id="btnDiminuir">diminuir</button>
+                      </div> 
+                    </div>
+                  </div>
+                </div>  
+            </ul>
+        </nav>
+      </div>
+      <input type="checkbox" class="mode" id="mode"/>
+      <label class="label" for="mode">
+        <i class="fa-solid fa-moon fa-sm"></i>
+        <i class="fa-solid fa-sun fa-sm"></i>
+        <div class="ball"></div>
+      </label>       
+    </header>
+    <!-- final header -->
+
+    <!--hero modavo-->
+    <div class="hero px-4 pt-5 my-5 text-center border-bottom">
+      <div class="overflow-hidden" style="max-height: 30vh;">
+        <div class="container px-5">
+          <img src="../img/logomodavo.png" class="modavo img-fluid" alt="modavo imagem" width="700" height="800" loading="lazy" data-aos="fade-down" data-aos-delay="100">
+        </div>
+      </div>
+      <h1 class="display-4 fw-bold text-body-emphasis" data-aos="fade-down" data-aos-delay="200">CPaaS Platform</h1>
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4" data-aos="fade-down" data-aos-delay="300">O CPaaS, com sua escalabilidade, flexibilidade, autenticação e segurança aprimoradas, está revolucionando o modo como as empresas habilitadas em nuvem implementam comunicações de voz, SMS e vídeo.</p>
+      </div>
+    </div>
+    <!--final hero-->
+
+    <main id="main">
+
+    <div class="container col-xxl-8">
+      <div class="row flex-lg-row-reverse align-items-center">
+        <div class="col-10 col-sm-8 col-lg-6">
+          <a href="https://storyset.com/online"><img src="../img/Online world-amico.svg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy" data-aos="fade-up-left"></a>
+        </div>
+        <div class="col-lg-6" data-aos="fade-right">
+          <h2 class="title">O QUE É?</h2>
+          <h4 class="subtitle1">Communication Platform as a Service</h4>
+          <h5 class="subtitle2">Plataforma de Comunicação como Serviço</h5>
+          <p class="lead">É uma solução de software de comunicação que atua
+            como uma base sobre a qual desenvolvedores podem
+            integrar uma variedade de aplicativos. Métodos de comunicação típicos, como voz,
+            chamadas de vídeo ou mensagens de texto SMS, podem ser
+            incorporados em outros sistemas por meio de APIs que
+            se conectam à plataforma CPaaS.</p>
+          <p class="lead">Essas APIs permitem que as empresas expandam suas
+            ofertas sem a necessidade de hardware ou software
+            adicional.</p>
+        </div>
+      </div>
+    </div>
+
+      <!-- Utilizações -->
+      <section id="planos" class="planos pt-0">
+        <div class="container" data-aos="fade-up">
+
+          <div class="section-header">
+            <h2>UTILIZAÇÕES</h2>
+          </div>
+
+          <div class="row gy-4">
+
+            <div class="col-lg-3" data-aos="fade-left" data-aos-delay="900">
+              <div class="planos-item">
+                <img src="../img/Port-rafiki.svg" class="fa-image-portrait">
+                <h3 class="text-center">Logística</h3>
+                <ul>
+                  <li><i class="fa-solid fa-check" style="color: #730318"></i>Acesso seguro com 2FA.</li>
+                  <li><i class="fa-solid fa-check" style="color: #730318"></i>Uso de números mascarados para proteção de funcionário e cliente. </li>
+                  <li><i class="fa-solid fa-check" style="color: #730318"></i>Mantenha o cliente informado sobre entrega e serviços.</li>
+                  <li><i class="fa-solid fa-check" style="color: #730318"></i>Verified calling para confirmação de entregas.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-3" data-aos="fade-left" data-aos-delay="900">
+              <div class="planos-item">
+                <img src="../img/Add to Cart-amico.svg" class="fa-image-portrait">
+                <h3 class="text-center">Varejo</h3>
+                <ul>
+                  <li><i class="fa-solid fa-check" style="color: #730318"></i>Compra segura com 2FA.</li>
+                  <li><i class="fa-solid fa-check" style="color: #730318"></i>Avisos sobre compras e entregas</li>
+                  <li><i class="fa-solid fa-check" style="color: #730318"></i>Upsell com novas ofertas e vantagens via SMS ou Verified Calling.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-3" data-aos="fade-right" data-aos-delay="900">
+              <div class="planos-item">
+                <img src="../img/Service 24_7-pana.svg" class="fa-image-portrait">
+                <h3 class="text-center">Call Center</h3>
+                <ul>
+                  <li><i class="fa-solid fa-check" style="color: #730318"></i>Melhore taxas de abertura utilizando alertas SMS para confirmações.</li>
+                  <li><i class="fa-solid fa-check" style="color: #730318"></i>Economia de números com o uso de um único número máscara por todos os agentes.</li>
+                  <li><i class="fa-solid fa-check" style="color: #730318"></i>Verified Calling para confirmação de agendamentos.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-3" data-aos="fade-right" data-aos-delay="900">
+              <div class="planos-item">
+                <img src="../img/Online connection-rafiki.svg" class="fa-image-portrait">
+                <h3 class="text-center">Saúde</h3>
+                <ul>
+                  <li><i class="fa-solid fa-check" style="color: #730318"></i>Acesso seguro com 2FA.</li>
+                  <li><i class="fa-solid fa-check" style="color: #730318"></i>Melhore o agendamento e reduza faltas com lembretes por SMS.</li>
+                  <li><i class="fa-solid fa-check" style="color: #730318"></i>Tokens de autorização para procedimentos com 2FA.</li>
+                  <li><i class="fa-solid fa-check" style="color: #730318"></i>Verified Calling para avisos de resultados e agendamentos.</li>
+                </ul>
+              </div>
+            </div>      
+
+        <div class="section-header">
+          <h2>POR QUE ESCOLHER A TELECALL?</h2>
+        </div>
+
+        <div class="listas">
+          <ul class="fa-ul">
+            <li><span class="fa-li"><i class="fa-solid fa-angles-right" style="color: #730318"></i></span>Empresa que já conhecem e confiam;</li>
+            <li><span class="fa-li"><i class="fa-solid fa-angles-right" style="color: #730318"></i></span>Aplicativos de rápida implementação;</li>
+            <li><span class="fa-li"><i class="fa-solid fa-angles-right" style="color: #730318"></i></span>Rede própria de alta capacidade e controle total de ponta-a-ponta;</li>
+            <li><span class="fa-li"><i class="fa-solid fa-angles-right" style="color: #730318"></i></span>Representantes locais de vendas e suporte;</li>
+            <li><span class="fa-li"><i class="fa-solid fa-angles-right" style="color: #730318"></i></span>API simples e de rápida implementação;</li>
+            <li><span class="fa-li"><i class="fa-solid fa-angles-right" style="color: #730318"></i></span>Melhor custo benefício para um conjunto completo de recursos e serviços.</li>
+          </ul>
+      </div>
+
+
+      <div class="section-header">
+        <h2>QUEM USA?</h2>
+      </div>
+      <section id="horizontal-pricing" class="horizontal-pricing pt-0">
+        <div class="container" data-aos="fade-up">
+          <div class="row gy-4 pricing-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-12 d-flex align-items-center justify-content-center">
+              <img src="../img/logosquemusa.png" class="img-fluid" alt="">
+            </div>
+          </div><!-- End Pricing Item -->
+    </main>
+
+    <!--sticky icon--> 
+
+      <div class="sticky-icon">
+          <a href="https://api.whatsapp.com/send?phone=552130301010&text=%23Comercial" class="wpp"><i class="fa-brands fa-whatsapp"></i> Whatsapp </a>
+          <a href="https://www.facebook.com/TelecallBr" class="facebook"><i class="fa-brands fa-facebook-f"></i> Facebook </a>
+          <a href="https://www.instagram.com/telecallbr/" class="instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          <a href="#" class="linkedin"><i class="fa-brands fa-linkedin-in"></i> Linkedin </a>   
+      </div>
+
+  <!--final sticky icon-->
+    <!--footer/rodapé-->
+    <footer id="footer" class="footer">
+
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-info">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <img src="../img/logotelecallbranca.png">
+            </a>
+
+          <hr>
+            
+            <p>Institucional</p>
+            <p>Depoimentos</p>
+            <p>Carreiras</p>
+            <p>Contato</p>
+            <p>Vendas</p>
+            <p>FAQ</p>
+            <p>Política e Privacidade</p>
+
+            <p>Contratos</p>
+
+            <p>Manual dos Telefones</p>
+            <p>Prestação STFC</p>
+            <p>Adesão e Prestação do SCM BL</p>
+            <p>Adesão e Prestação do SCM IP</p>
+            <p>Prestação SMP</p>
+            <p>Cobertura SMP</p>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Internet</h4>
+            <ul>
+              <li><a href="#">Link Dedicado</a></li>
+              <li><a href="#">Banda Larga</a></li>
+              <li><a href="#">Wi-Fi</a></li>
+            </ul>
+
+            <h4>Outras Soluções</h4>
+            <ul>
+              <li><a href="#">Outsourcing de Hardware</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Telephony</h4>
+            <ul>
+              <li><a href="#">PABX IP Virtual</a></li>
+              <li><a href="#">E1</a></li>
+              <li><a href="#">Números 0800 e 40XX</a></li>
+            </ul>
+
+            <h4>Mobility</h4>
+            <ul>
+              <li><a href="#">Celular Empresarial</a></li>
+              <li><a href="#">MVNA</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Networks and Infraestructure</h4>
+            <ul>
+              <li><a href="#">Ponto-a-Ponto</a></li>
+              <li><a href="#">MPLS</a></li>
+              <li><a href="#">Fibra Apagada a Dutos</a></li>
+              <li><a href="#">Co-location</a></li>
+            </ul>
+      </div>
+
+      <div class="container mt-4">
+        <div class="copyright">
+          Copyright <strong><span>&copy; Telecall</span></strong>. Todos os direitos reservados
+        </div>
+      </div>
+
+    </footer>
+    <!--fim footer/rodapé-->
+  </div>
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-chevron-up" style="color: white"></i></a>
+
+  <div id="preloader"></div>
+
+  <!--referências ao js-->
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../vendor/aos/aos.js"></script>
+
+  <!--referência js-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/darklightmode.js"></script>
+  <script src="../js/acessibilidade.js"></script>
+</body>
+
+</html>
